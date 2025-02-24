@@ -1,12 +1,3 @@
-git add . 
-add changes to working tree
-
-git commit -m "message"
-commit to local repo with message
-
-git push
-pushes commits to online repository
-
-git pull --rebase
-pulls changes from online repo
-
+Tesco - Blue Boar | Tesco Stores Ltd, Blue Boar Ln, Norwich NR7 8AB | Virtue
+Edith Cavell Memorial | 7 Tombland, Norwich NR3 1HF | Adventure
+Hallswood Animal Sanctuary | 23 Suffolk Square, Norwich NR2 2AA | Selfless

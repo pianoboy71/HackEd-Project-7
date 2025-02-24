@@ -1,0 +1,12 @@
+git add . 
+add changes to working tree
+
+git commit -m "message"
+commit to local repo with message
+
+git push
+pushes commits to online repository
+
+git pull --rebase
+pulls changes from online repo
+

@@ -1,0 +1,37 @@
+1: what have you done so far?
+2: what are you doing to do next?
+3: is there anything stopping you at the moment?
+
+Yahia:
+
+1: name, sorting external api with project email for keys
+2: js file to connect to api and figure out details
+3: no, internet issues
+
+Jaden:
+1: ideas, supporting with database and backend
+2: design, check what to do list
+3: personal laptop
+
+Peter:
+1: setting up flask and backend/database
+2: supporting frontend with accounts, python front page, etc.
+3: not too much, no major blockers.
+
+Rosie:
+1: helping with brand name, ui/ux layout and design
+2: langing page layout
+3: what elements to include, layout of page
+
+Tee:
+1: ui/ux, brand name, creating user flow.
+2: create wireframes and logos depending on name
+3: not enough notes to create ideal designs from people, paper to sketch ideas
+
+Sophie:
+1: researching places/tasks
+2: check what to do list, help out with frontend where possible
+3: nothing
+
+Jack:
+1: 

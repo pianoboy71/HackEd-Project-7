@@ -140,7 +140,7 @@ font-weight: bold;
 /* START OF TASKS PAGE STYLING */
 
 .tasksPage {
-    background-color: #FDFFFC;
+    /* background-color: #FDFFFC; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -162,9 +162,9 @@ font-weight: bold;
     height: 10vh;
 }
 
-/* .virtueTasks {
+.virtueTasks {
     background-color: #C4E0F9;
-} */
+}
 
 .virtueTasks img {
     height: 60px;
@@ -172,17 +172,17 @@ font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #C4E0F9;
+    background-color: #eaf4fc;
     border-radius: 100%;
 }
 
 .virtueContainer > p {
-    background-color: #C4E0F9;
+    background-color: #eaf4fc;
 }
 
-/* .adventureTasks {
+.adventureTasks {
     background-color: #EF5D60;
-} */
+}
 
 .adventureTasks img {
     height: 60px;
@@ -190,17 +190,17 @@ font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #EF5D60;
+    background-color: #e39293;
     border-radius: 100%;
 }
 
 .adventureContainer > p {
-    background-color: #EF5D60;
+    background-color: #e39293;
 }
 
-/* .selflessTasks {
+.selflessTasks {
     background-color: #D99AC5;
-} */
+}
 
 .selflessTasks img {
     height: 60px;
@@ -208,12 +208,12 @@ font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #D99AC5;
+    background-color: #e5b0d4;
     border-radius: 100%;
 }
 
 .selflessContainer > p {
-    background-color: #D99AC5;
+    background-color: #e5b0d4;
 }
 
 .tasksContainer {
@@ -225,14 +225,13 @@ font-weight: bold;
 .tasksSection {
     display: flex;
     width: 100vw;
-    height: 25vh;
+    height: 27vh;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
 .eachTask {
-    border: 2px solid black;
     height: 40px;
     width: 60vw;
     border-radius: 10px;

@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 
 .mainNav {
@@ -28,7 +29,7 @@ body {
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 60vw;
+height: 100vh;
 gap: 20px;
 }
 
@@ -39,16 +40,32 @@ p {
 .homePointsContainer {
 background-color: beige;
 width: 90vw;
-height: 40vh;
+height: 30vh;
 margin-top: 20px;
 border-radius: 10px;
 display: flex;
 flex-direction: column;
 justify-content: center;
+border: solid 3px black;
+position: relative;
+}
+
+.homePointsContainer p{
+position: absolute;
+top: 15px;
+left: 137px;
+}
+
+h3 {
+    color: #FACF5A;
+    font-size: 100px;
 }
 
 .tagline {
-background-color: blueviolet;
+font-size: 37px;
+margin: 0;
+width: 100vw;
+margin: 10px;
 }
 
 .homeTaskContainer {
@@ -57,6 +74,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 transform: scale(1.9);
+margin-top: 20px;
+gap: 12px;
 }
 
 .homeTask {
@@ -64,4 +83,16 @@ border: solid 2px black;
 width: 30vw;
 border-radius: 10px;
 background-color: brown;
+}
+
+.virtueTask {
+    background-color: #C4E0F9;
+}
+
+.selflessTask {
+    background-color: #D99AC5;
+}
+
+.adventureTask {
+    background-color: #EF5D60;
 }

@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Users (
 CREATE TABLE IF NOT EXISTS Categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    description TEXT NOT NULL,
+    description TEXT NOT NULL
 );
 
 -- Basic Task table
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Task (
     name TEXT NOT NULL,
     points INTEGER NOT NULL,
     location_data TEXT NOT NULL, -- Json format for robustness
-    task TEXT NOT NULL,
+    task_description TEXT NOT NULL,
     file_required BOOL NOT NULL,
     file_location TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS CompletedTasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     task_id INTEGER NOT NULL,
-    status INTEGER NOT NULL,
+    status TEXT NOT NULL,
 
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (task_id) REFERENCES Task(id)

@@ -1,12 +1,26 @@
 from flask import *
 import hashlib
 import sqlite3
-import datetime
 from emailpy import emails as ep
+from datetime import timedelta, datetime
+import string
+import random
+
 
 app = Flask(__name__)
 
 app.secret_key = 'Egg Bag'
+
+auth_codes = {}
+
+forgot_password_codes = {}
+
+email_address = 'telepy.noreply@gmail.com'
+
+webserver_address = '127.0.0.1:5000'
+
+
+
 
 def get_email(email):
     conn = sqlite3.connect("group7.db")
@@ -121,15 +135,15 @@ def from_now(days):
     return now + timedelta(days=days)
 
 
-def register(username, email, password, currency):
+def register(username, email, password):
     conn = sqlite3.connect("group7.db")
     cursor = conn.cursor()
     date = get_day()
 
     cursor.execute('''
-    INSERT INTO Users (username, password_hash, email, currency, created_at) 
+    INSERT INTO Users (username, password_hash, email, type, created_at) 
     VALUES (?, ?, ?, ?, ?)
-    ''', (username, password, email, currency, date))
+    ''', (username, password, email, 'user', date))
 
     conn.commit()
 
@@ -150,6 +164,7 @@ def login(username, password):
         return False
     else:
         if com_pass[0] == password:
+            print(f'{username} has signed in from {request.remote_addr}!')
             return True
 
         else:
@@ -182,58 +197,30 @@ def get_username():
     else:
         return None
 
-@app.route('/', methods=['GET'])
-def index():
-    return render_template('home.html')
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/login', methods=['POST'])
+def login_data():
+    login_info = request.get_json()
+    username = login_info['username']
+    password = login_info['password']
     if request.method == 'POST':
-        if login(request.form['username'], hash_string(request.form['password'])):
-            session['username'] = request.form['username']
-            resp = make_response(redirect("/dashboard"))
-            resp.set_cookie('Joshua',
-                            value=f"{session['username']}|{hash_string(request.form['password'])}",
-                            expires=from_now(3))
-            return resp
+        if login(username, password):
+            return jsonify({'key': hash_string(f"{username}|{password}")})
         else:
-            return render_template('landing.html', response="Username or Password is incorrect", username=get_username())
-    else:
-        joshua = request.cookies.get('Joshua', 'David')
-
-
-        if joshua == "David":
-            return render_template('landing.html', response="", username=get_username())
-
-        else:
-            username_password = joshua.split("|")
-            if login(username_password[0], username_password[1]):
-                session['username'] = username_password[0]
-                resp = make_response(redirect("/dashboard"))
-                resp.set_cookie('Joshua',
-                                value=f"{session['username']}|{username_password[1]}",
-                                expires=from_now(3))
-                return resp
-
-            else:
-                return render_template('landing.html', response="Code error - 34", username=get_username())
+            return jsonify({'Error' : 'Login not authorized'}), 403
 
 
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['POST'])
 def signup():
-    if request.method == 'GET':
-        return render_template('sign_up.html', response='', username=get_username())
-
     if request.method == 'POST':
-        user_name = request.form['Username']
-        password = request.form['Password']
-        email = request.form['Email']
-        format = request.form['Format']
+        login_info = request.get_json()
+        user_name = login_info['username']
+        password = login_info['password']
+        email = login_info['email']
 
         if column_check("Users", "username", user_name) and column_check("Users", "email", email):
-            while True:
-                com_code = get_random_string(12)
+            '''while True:
+                com_code =  randint
                 if com_code not in auth_codes:
                     break
 
@@ -250,22 +237,25 @@ def signup():
             auth_codes[com_code]['email'] = email
             auth_codes[com_code]['password'] = hash_string(password)
             auth_codes[com_code]['username'] = user_name
-            auth_codes[com_code]['format'] = format
 
             session['auth_code'] = com_code
-
-            return render_template('sign_up.html', response='Email sent', username=get_username())
-
+'''
+            if register(user_name, email, password):
+            
+                return jsonify({'key': hash_string(f"{user_name}|{password}")})
+            
+            else:
+                return jsonify({'Error' : 'Register error'}), 403
         else:
-            return render_template('sign_up.html', response='Email Or Username in Use', username=get_username())
+            return jsonify({'Error' : 'Invalid sign up information'}), 403
 
 
 
-@app.route('/email_verify/<code>', methods=['GET'])
+'''@app.route('/email_verify/<code>', methods=['GET'])
 def email_verify(code):
     if code in auth_codes:
         if 'auth_code' in session:
-            register(auth_codes[code]["username"], auth_codes[code]['email'], auth_codes[code]['password'], auth_codes[code]['format'])
+            register(auth_codes[code]["username"], auth_codes[code]['email'], auth_codes[code]['password'])
             login(auth_codes[code]["username"], auth_codes[code]['password'])
 
             session['username'] = auth_codes[code]["username"]
@@ -279,9 +269,9 @@ def email_verify(code):
         else:
             return "This code is either expired or not being opened in the same browser!"
     else:
-        return "Code Error 621"
+        return "Code Error 345"'''
 
-@app.route('/forgot', methods=['GET', 'POST'])
+'''@app.route('/forgot', methods=['GET', 'POST'])
 def forgot_password():
     if request.method == 'POST':
         if not column_check("users", "email", request.form['email']):
@@ -315,10 +305,10 @@ just click on the link in the same browser.
         else:
             return render_template("forgot.html", response='Email Sent!', username=get_username())
     else:
-        return render_template("forgot.html", response='', username=get_username())
+        return render_template("forgot.html", response='', username=get_username())'''
 
 
-@app.route('/password-reset/<code>', methods=['GET', 'POST'])
+'''@app.route('/password-reset/<code>', methods=['GET', 'POST'])
 def password_reset(code):
     if code in forgot_password_codes:
         if request.method == 'GET':
@@ -339,45 +329,15 @@ def password_reset(code):
                 return "This code is either expired or not being opened in the same browser!"
 
     else:
-        return "Code Error 1998"  # Lol i am bad
+        return "Code Error 1998"  # Lol i am bad'''
 
 
-@app.route('/logout', methods=['GET', 'POST'])
-def logout():
-    session.clear()
-    resp = make_response(redirect("/"))
-    resp.set_cookie('Joshua', '', expires=0)
-    return resp
-
-@app.route('/add-category', methods=['GET', 'POST'])
-def add_category_web():
-    if is_user():  # check if the browsers session is logged in with a account
-        categories = get_transaction_categories()
-        
-        if request.method == 'POST':
-
-            description = request.form['description']
-            name = request.form['name']
-           
-            if description != '':
-                if name != '':
-                    if add_category( name, description):
-                        message = 'Added pookie Bear'
-                    else:
-                        message = "Something ain't right here. if this keeps recurring Contact support"
-                else:
-                    message = 'Enter a name!'
-            else:
-                message = 'Enter a Description!'
-            
-            
-            return render_template('add_category.html', username=get_username(), categories=categories, currency=get_user_currency(), message=message)
-
-        else:
-            return render_template('add_category.html', username=get_username(), categories=categories, currency=get_user_currency())
-
-    else:
-        return redirect('/') # if not return to sign
+def sum_numbers():
+    a = request.args.get('a', type=int)
+    b = request.args.get('b', type=int)
+    if a is None or b is None:
+        return "Missing parameters", 400
+    return jsonify({'sum': a + b})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

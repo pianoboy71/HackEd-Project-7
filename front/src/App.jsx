@@ -6,7 +6,6 @@ import TasksPage from "./Components/TasksPage"
 import ProgressPage from "./Components/ProgressPage"
 
 function App() {
-
   return (
     <>
      <BrowserRouter>
@@ -23,7 +22,7 @@ function App() {
       </Routes>
      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

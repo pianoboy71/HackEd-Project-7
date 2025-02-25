@@ -136,3 +136,108 @@ font-weight: bold;
 }
 
 /* END OF HOME PAGE STYLING */
+
+/* START OF TASKS PAGE STYLING */
+
+.tasksPage {
+    background-color: #FDFFFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.tasksPage h1 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tasksTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #939F5C;
+    width: 100vw;
+    height: 10vh;
+}
+
+/* .virtueTasks {
+    background-color: #C4E0F9;
+} */
+
+.virtueTasks img {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4E0F9;
+    border-radius: 100%;
+}
+
+.virtueContainer > p {
+    background-color: #C4E0F9;
+}
+
+/* .adventureTasks {
+    background-color: #EF5D60;
+} */
+
+.adventureTasks img {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EF5D60;
+    border-radius: 100%;
+}
+
+.adventureContainer > p {
+    background-color: #EF5D60;
+}
+
+/* .selflessTasks {
+    background-color: #D99AC5;
+} */
+
+.selflessTasks img {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D99AC5;
+    border-radius: 100%;
+}
+
+.selflessContainer > p {
+    background-color: #D99AC5;
+}
+
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tasksSection {
+    display: flex;
+    width: 100vw;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.eachTask {
+    border: 2px solid black;
+    height: 40px;
+    width: 60vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* END OF TASKS PAGE STYLING */

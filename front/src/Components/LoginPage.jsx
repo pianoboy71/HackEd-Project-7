@@ -40,13 +40,14 @@ export default function LoginPage() {
     //try {
     const hashedPassword = await hashPassword(password); // Hash the password
 
-    const response = await axios.post("http://egg.fractaldev.co/login", {
+    const response = await axios.post("https://egg.fractaldev.co/login", {
       username,
       password: hashedPassword, // Send the hashed password
     });
 
     if (response.data?.key) {
       Cookies.set("authToken", response.data.key, { expires: 7 });
+      Cookies.set("username", response.data.username, { expires: 7 });
       alert("Sign-in successful!");
     } else {
       alert("Invalid credentials!");
@@ -56,7 +57,7 @@ export default function LoginPage() {
     //alert("Error signing in. Please try again.");
     //}
   }
-  alert(requestEgg("http://egg.fractaldev.co/username"));
+  
   return (
     <>
       <div className="container">

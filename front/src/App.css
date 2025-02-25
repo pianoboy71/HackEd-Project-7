@@ -24,6 +24,7 @@ body {
     background-color: #A77E58;
     width: 100vw;
     height: 10vh;
+    position: relative;
 }
 
 .mainNav img {
@@ -240,3 +241,40 @@ font-weight: bold;
     align-items: center;
 }
 /* END OF TASKS PAGE STYLING */
+
+/* START OF HAMBURGER MENU STYLING */
+
+.hamburgerMenuDisplay {
+    position: absolute;
+    background-color: #939F5C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+
+.hamburgerMenuDisplay button {
+    transform: scale(2);
+    background-color: #C4E0F9;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuButton {
+    display: flex;
+    gap: 10px;
+    width: 35vw;
+}
+
+.menuButton img {
+    height: 40px;
+    margin: 0;
+}

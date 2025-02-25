@@ -270,7 +270,8 @@ font-weight: bold;
 
 .menuButton {
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    width: 35vw;
 }
 
 .menuButton img {

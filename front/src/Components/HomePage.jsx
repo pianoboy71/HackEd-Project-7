@@ -24,13 +24,13 @@ export default function HomePage() {
                 </section>
                     <h2 className="tagline">Lets get cracking!</h2>
                 <section className="homeTaskContainer">
-                    <div className="homeTask">
+                    <div className="homeTask virtueTask">
                         <p>Task 1</p>
                     </div>
-                    <div className="homeTask"> 
+                    <div className="homeTask selflessTask"> 
                         <p>Task 2</p>
                     </div>
-                    <div className="homeTask">
+                    <div className="homeTask adventureTask">
                         <p>Task 3</p>
                     </div>
                 </section>

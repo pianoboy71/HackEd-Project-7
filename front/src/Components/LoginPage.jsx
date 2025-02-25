@@ -43,6 +43,7 @@ export default function LoginPage() {
   }
 
   return (
+    <>
     <div className="container">
       <h1>{isSignUp ? "Sign Up" : "Login"}</h1>
       <form id="auth-form" onSubmit={handleSignIn}>

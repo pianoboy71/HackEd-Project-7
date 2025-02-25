@@ -1,0 +1,67 @@
+body {
+    background-color: #FDFFFC;
+    text-align: center;
+    margin: 0;
+  }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainNav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A77E58;
+    width: 100vw;
+    height: 10vh;
+}
+
+.mainNav img {
+    height: 30px;
+}
+
+.homePage {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 60vw;
+gap: 20px;
+}
+
+p {
+    margin: 0;
+}
+
+.homePointsContainer {
+background-color: beige;
+width: 90vw;
+height: 40vh;
+margin-top: 20px;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.tagline {
+background-color: blueviolet;
+}
+
+.homeTaskContainer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transform: scale(1.9);
+}
+
+.homeTask {
+border: solid 2px black;
+width: 30vw;
+border-radius: 10px;
+background-color: brown;
+}

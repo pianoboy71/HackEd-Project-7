@@ -14,6 +14,8 @@ body {
     height: 100vh;
 }
 
+/* START OF NAV BAR STYLING */
+
 .mainNav {
     text-align: center;
     display: flex;
@@ -25,7 +27,23 @@ body {
 }
 
 .mainNav img {
-    height: 30px;
+    height: 70px;
+    margin-left: 10px;
+}
+
+.mainNav a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Sniglet", serif;
+}
+
+.hamburgerMenu {
+    background: none;
+    border: none;
+    font-size: 30px;
+    margin-right: 10px;
 }
 
 /* START OF HOME PAGE STYLING */
@@ -69,6 +87,7 @@ h3 {
     color: #FACF5A;
     font-size: 100px;
     text-shadow: 2px 2px #313715;
+    margin: 0;
 }
 
 .tagline {
@@ -84,14 +103,12 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 transform: scale(1.9);
-margin-top: 20px;
-gap: 12px;
+margin-top: 64px;
 }
 
 .homeTask {
 width: 40vw;
 border-radius: 10px;
-background-color: brown;
 display: flex;
 justify-content: space-between;
 padding:  5px 10px;
@@ -109,6 +126,13 @@ font-weight: bold;
 
 .adventureTask {
     background-color: #EF5D60;
+}
+
+.css-yfrx4k-MuiAccordionSummary-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-family: "Inter", serif;
 }
 
 /* END OF HOME PAGE STYLING */

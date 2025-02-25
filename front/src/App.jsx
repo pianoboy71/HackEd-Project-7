@@ -13,12 +13,12 @@ function App() {
         <nav className="mainNav">
           <Link to="/">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/4337/4337076.png"
+              src="./src/assets/easterneggslogo.png"
               alt="logo"
             />
           </Link>
-          <Link to="/">Easter Eggs</Link>
-          <button>☰</button>
+          <Link to="/">Eastern Eggs</Link>
+          <button className="hamburgerMenu">☰</button>
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />

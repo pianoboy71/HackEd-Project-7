@@ -1,4 +1,7 @@
 // import { useEffect, useState } from "react"
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
 
 export default function HomePage() {    
     
@@ -24,17 +27,38 @@ export default function HomePage() {
                 </section>
                     <h2 className="tagline">Lets get cracking!</h2>
                 <section className="homeTaskContainer">
-                    <div className="homeTask virtueTask">
-                        <p>Virtue Task</p>
-                        <p>0/1</p>
+                    <div className="homeTask">
+                    <Accordion  sx={{ backgroundColor: "#C4E0F9", boxShadow: 'none', borderRadius: 2 }}>
+                        <AccordionSummary>
+                            <p>Virtue Task</p>
+                            <p>0/1</p>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <p>More information about the virtue task</p>
+                        </AccordionDetails>
+                    </Accordion >                    
                     </div>
-                    <div className="homeTask selflessTask"> 
-                        <p>Selfless Task</p>
-                        <p>0/1</p>
+                    <div className="homeTask">
+                    <Accordion sx={{ backgroundColor: "#D99AC5", boxShadow: 'none', borderRadius: 2 }}>
+                        <AccordionSummary>
+                            <p>Selfless Task</p>
+                            <p>0/1</p>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <p>More information about the virtue task</p>
+                        </AccordionDetails>
+                    </Accordion>                    
                     </div>
-                    <div className="homeTask adventureTask">
-                        <p>Adventure Task</p>
-                        <p>0/1</p>
+                    <div className="homeTask">
+                    <Accordion sx={{ backgroundColor: "#EF5D60", boxShadow: 'none', borderRadius: 2 }}>
+                        <AccordionSummary>
+                            <p>Adventure Task</p>
+                            <p>0/1</p>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <p>More information about the virtue task</p>
+                        </AccordionDetails>
+                    </Accordion>                    
                     </div>
                 </section>
             </div>

@@ -8,18 +8,19 @@ egg.fractaldev.co/register
 returns a key
 
 # Task info
-
-## egg.fractaldev.co/tasks
 GET
-Getting tasks that are available takes
+egg.fractaldev.co/tasks
 
-## egg.fractaldev.co/task
-GET
-Getting task
+GET 
+egg.fractaldev.co/tasks/category
 
 ## egg.fractaldev.co/tasks/status
 GET
 Getting tasks status
 
+# Points
+egg.fractaldev.co/points
 
 # User Info
+
+egg.fractaldev.co/userinfo/points

@@ -44,45 +44,46 @@ export default function LoginPage() {
 
   return (
     <>
-    <div className="container">
-      <h1>{isSignUp ? "Sign Up" : "Login"}</h1>
-      <form id="auth-form" onSubmit={handleSignIn}>
-        {isSignUp && (
+      <div className="container">
+        <h1>{isSignUp ? "Sign Up" : "Login"}</h1>
+        <form id="auth-form" onSubmit={handleSignIn}>
+          {isSignUp && (
+            <div className="input-group">
+              <label htmlFor="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" />
+            </div>
+          )}
           <div className="input-group">
-            <label htmlFor="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" />
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
-        )}
-        <div className="input-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
-      </form>
-      <p id="toggle-form">
-        {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-        <a href="#" onClick={toggleForm}>
-          {isSignUp ? "Login" : "Sign Up"}
-        </a>
-      </p>
-    </div>
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
+        </form>
+        <p id="toggle-form">
+          {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
+          <a href="#" onClick={toggleForm}>
+            {isSignUp ? "Login" : "Sign Up"}
+          </a>
+        </p>
+      </div>
+    </>
   );
 }

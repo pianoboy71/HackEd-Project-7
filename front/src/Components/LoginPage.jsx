@@ -19,6 +19,21 @@ export default function LoginPage() {
     return hashArray.map((byte) => byte.toString(16).padStart(2, "0")).join("");
   }
 
+  async function requestEgg(url, options = {}) {
+    const authToken = Cookies.get("authToken"); // Retrieve auth token from cookies
+    const urlWithAuth = authToken
+      ? `${url}${url.includes("?") ? "&" : "?"}k=${authToken}`
+      : url;
+
+    try {
+      const response = await axios({ url: urlWithAuth, ...options });
+      return response.data;
+    } catch (error) {
+      console.error("Error in requestEgg:", error);
+      throw error;
+    }
+  }
+
   async function handleSignIn(e) {
     e.preventDefault(); // Prevent form reload
 
@@ -41,7 +56,7 @@ export default function LoginPage() {
     //alert("Error signing in. Please try again.");
     //}
   }
-
+  alert(requestEgg("http://egg.fractaldev.co/username"));
   return (
     <>
       <div className="container">

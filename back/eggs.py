@@ -240,12 +240,14 @@ def signup():
 
             session['auth_code'] = com_code
 '''
-            if register(user_name, email, password):
+            register(user_name, email, password):
             
-                return jsonify({'key': hash_string(f"{user_name}|{password}")})
+            return jsonify({
+                'key': hash_string(f"{user_name}|{password}"),
+                            
+                            })
             
-            else:
-                return jsonify({'Error' : 'Register error'}), 403
+            
         else:
             return jsonify({'Error' : 'Invalid sign up information'}), 403
 
@@ -331,13 +333,6 @@ def password_reset(code):
     else:
         return "Code Error 1998"  # Lol i am bad'''
 
-
-def sum_numbers():
-    a = request.args.get('a', type=int)
-    b = request.args.get('b', type=int)
-    if a is None or b is None:
-        return "Missing parameters", 400
-    return jsonify({'sum': a + b})
 
 if __name__ == '__main__':
     app.run(debug=True)

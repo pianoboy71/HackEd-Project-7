@@ -4,24 +4,36 @@
 
 Yahia:
 
-1: name, sorting external api with project email for keys
-2: js file to connect to api and figure out details
-3: no, internet issues
+1o: name, sorting external api with project email for keys
+1n: helping out with calculating distances, working on the presentation, and suggesting ideas for target audience  
+2o: js file to connect to api and figure out details
+2n: researching layouts for app, best way to attract clients with design of page, more presentation work
+3o: no, internet issues
+3n: no personal equipment to use, unfamiliarity
 
 Jaden:
-1: ideas, supporting with database and backend
-2: design, check what to do list
-3: personal laptop
+1o: ideas, supporting with database and backend
+1n: helping yahia with calculations, managing trello pages, and submitting ideas.
+2o: design, check what to do list
+2n: support with frontend and start with tailwind
+3o: personal laptop
+3n: design team showing him
 
 Peter:
-1: setting up flask and backend/database
-2: supporting frontend with accounts, python front page, etc.
-3: not too much, no major blockers.
+1o: setting up flask and backend/database
+1n: fixing backend to work with login pages
+2o: supporting frontend with accounts, python front page, etc.
+2n: integrating points with database
+3o: not too much, no major blockers.
+3n: frontend needs more
 
 Rosie:
-1: helping with brand name, ui/ux layout and design
-2: langing page layout
-3: what elements to include, layout of page
+1o: helping with brand name, ui/ux layout and design
+1n: working with tee to create the designs for the pages, and the wireframes for them, figuring communication with other pages 
+2o: langing page layout
+2n: colour theming, finishing progress pages, styling, desigining logo
+3o: what elements to include, layout of page
+3n: nothing at the moment
 
 Tee:
 1: ui/ux, brand name, creating user flow.
@@ -29,9 +41,17 @@ Tee:
 3: not enough notes to create ideal designs from people, paper to sketch ideas
 
 Sophie:
-1: researching places/tasks
-2: check what to do list, help out with frontend where possible
-3: nothing
+1o: researching places/tasks
+1n: supporting with making sure everything looks alright, and the pages look good
+2o: check what to do list, help out with frontend where possible
+2n: support design team and presentation
+3o: nothing
+3n: nothing
 
 Jack:
-1: 
+
+1: Help with creating log-in page
+2: Managing ideas for the project
+3: Setting the communicational infastructure
+4: Create CSS and ensuring communication.
+5: Not enough time for project managment and otherthings.

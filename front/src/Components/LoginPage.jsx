@@ -25,7 +25,7 @@ export default function LoginPage() {
     //try {
     const hashedPassword = await hashPassword(password); // Hash the password
 
-    const response = await axios.post("http://egg.fractaldev.co/sign", {
+    const response = await axios.post("http://egg.fractaldev.co/login", {
       username,
       password: hashedPassword, // Send the hashed password
     });

@@ -45,7 +45,7 @@ export default function HomePage() {
                             <p>0/1</p>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <p>More information about the virtue task</p>
+                            <p>More information about the selfless task</p>
                         </AccordionDetails>
                     </Accordion>                    
                     </div>
@@ -56,7 +56,7 @@ export default function HomePage() {
                             <p>0/1</p>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <p>More information about the virtue task</p>
+                            <p>More information about the adventure task</p>
                         </AccordionDetails>
                     </Accordion>                    
                     </div>

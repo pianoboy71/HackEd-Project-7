@@ -5,8 +5,17 @@ import LeaderboardPage from "./Components/LeaderboardPage";
 import TasksPage from "./Components/TasksPage";
 import ProgressPage from "./Components/ProgressPage";
 import LoginPage from "./Components/LoginPage";
+import HamburgerMenu from "./Components/HamburgerMenu";
+import { useState } from "react";
 
 function App() {
+  
+  const [showModal, setShowModal] = useState(false)
+
+  function toggleModal() {
+    setShowModal(!showModal)
+  }
+  
   return (
     <>
       <BrowserRouter>
@@ -18,7 +27,8 @@ function App() {
             />
           </Link>
           <Link to="/">Eastern Eggs</Link>
-          <button className="hamburgerMenu">☰</button>
+          <button onClick={toggleModal} className="hamburgerMenu">☰</button>
+          {showModal ? <HamburgerMenu toggleModal={toggleModal} /> : ''}
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />

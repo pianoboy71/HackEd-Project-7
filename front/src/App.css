@@ -1,0 +1,33 @@
+body {
+    padding: 10px 10px;
+    background-color: aqua;
+  }
+
+.mainNav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainNav img {
+    height: 30px;
+}
+
+  .homePage {
+    text-align: center;
+  }
+
+  .homeTaskContainer {
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homeTask {
+    border: solid 2px black;
+    width: 30vw;
+    border-radius: 10px;
+  }

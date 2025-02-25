@@ -56,27 +56,49 @@ Jack:
 4: Create CSS and ensuring communication.
 5: Not enough time for project managment and otherthings.
 
+Jack 2:
+1: Set GitHub repo, basic pages to build up to, help organise the. project.
+2: Add pages to do front end.
+3: No blockers atm.
+
 yahia 2:
-1: nothing
-2: continue on presentation, preparing selling points and doing research, researching competitors
-3: nothing
+1o: nothing
+1n: Making outline for presentation, formed beginning of slides.
+2o: continue on presentation, preparing selling points and doing research, researching competitors
+2n: make questionnaire for market research/prepare for judge questions
+3o: nothing
+3n: need screenshots of code/technical side for presentation.
 
 jaden 2:
-1: nothing
-2: work with rosie, sophie and other front end, preparing tailwindcss
-3: nothing really
+1o: nothing
+1n: installing tailwind, working on pages
+2o: work with rosie, sophie and other front end, preparing tailwindcss
+2n: preparing tailwind and refactoring css
+3o: nothing really
+3n: not really
 
 peter 2;
-1: finished signup/sign in pages
-2: work with frontend on creating main connections with front and back with react
-3: not really
+1o: finished signup/sign in pages
+1n: sorting endpoints for sign in/up, deployed backend on server
+2o: work with frontend on creating main connections with front and back with react
+2n: discuss with frontend about what endpoints to work on
+3o: not really
+3n: nothing
 
 rosie 2:
-1: nothing
-2: delegating elements between people, communicating effectively with each other
-3: nothing
+1o: nothing
+1n: converting to react, adding elements and configuring general frontend, discussed with peter about endpoints
+2o: delegating elements between people, communicating effectively with each other
+2n: knowing what functions go on what pages, setting up fetch requests and testing connection with backend
+3o: nothing
+3n: nothing
 
 sophie 2:
 1: nothing
 2: support with peer review, designing and presentation
 3: nothing
+
+tee 2:
+1n: created sketches for logo and design of pages, decided on colour palette
+2n: put wireframes on figma for communication, help rosie with design elements
+3n: nothing

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&family=Modak&family=Pixelify+Sans&family=Sniglet&display=swap');
+
 body {
     background-color: #FDFFFC;
     text-align: center;
     margin: 0;
+    font-family: "Inter", serif;
   }
 
 #root {
@@ -25,6 +28,8 @@ body {
     height: 30px;
 }
 
+/* START OF HOME PAGE STYLING */
+
 .homePage {
 display: flex;
 flex-direction: column;
@@ -35,14 +40,16 @@ gap: 20px;
 
 p {
     margin: 0;
+    font-weight: bold;
 }
 
 .homePointsContainer {
-background-color: beige;
+background-color: #939F5C;
+opacity: 75%;
 width: 90vw;
 height: 30vh;
 margin-top: 20px;
-border-radius: 10px;
+border-radius: 20px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -53,19 +60,22 @@ position: relative;
 .homePointsContainer p{
 position: absolute;
 top: 15px;
-left: 137px;
+left: 108px;
+font-size: 25px;
+text-shadow: 1px 1px grey;
 }
 
 h3 {
     color: #FACF5A;
     font-size: 100px;
+    text-shadow: 2px 2px #313715;
 }
 
 .tagline {
 font-size: 37px;
 margin: 0;
 width: 100vw;
-margin: 10px;
+margin-bottom: 30px;
 }
 
 .homeTaskContainer {
@@ -79,10 +89,14 @@ gap: 12px;
 }
 
 .homeTask {
-border: solid 2px black;
-width: 30vw;
+width: 40vw;
 border-radius: 10px;
 background-color: brown;
+display: flex;
+justify-content: space-between;
+padding:  5px 10px;
+font-size: 10px;
+font-weight: bold;
 }
 
 .virtueTask {
@@ -96,3 +110,5 @@ background-color: brown;
 .adventureTask {
     background-color: #EF5D60;
 }
+
+/* END OF HOME PAGE STYLING */

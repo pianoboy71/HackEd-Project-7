@@ -55,3 +55,28 @@ Jack:
 3: Setting the communicational infastructure
 4: Create CSS and ensuring communication.
 5: Not enough time for project managment and otherthings.
+
+yahia 2:
+1: nothing
+2: continue on presentation, preparing selling points and doing research, researching competitors
+3: nothing
+
+jaden 2:
+1: nothing
+2: work with rosie, sophie and other front end, preparing tailwindcss
+3: nothing really
+
+peter 2;
+1: finished signup/sign in pages
+2: work with frontend on creating main connections with front and back with react
+3: not really
+
+rosie 2:
+1: nothing
+2: delegating elements between people, communicating effectively with each other
+3: nothing
+
+sophie 2:
+1: nothing
+2: support with peer review, designing and presentation
+3: nothing

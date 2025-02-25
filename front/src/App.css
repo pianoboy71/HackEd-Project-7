@@ -268,12 +268,12 @@ font-weight: bold;
     align-items: center;
 }
 
-.leaderboardButton {
+.menuButton {
     display: flex;
     flex-direction: column;
 }
 
-.leaderboardButton img {
+.menuButton img {
     height: 40px;
     margin: 0;
 }

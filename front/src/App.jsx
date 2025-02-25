@@ -12,7 +12,7 @@ function App() {
      <BrowserRouter>
       <nav className="mainNav">
         <Link to="/"><img src="https://cdn-icons-png.flaticon.com/128/4337/4337076.png" alt="logo" /></Link>
-        <Link to="/">Home</Link>
+        <Link to="/">Easter Eggs</Link>
         <button>☰</button>
       </nav>
       <Routes>

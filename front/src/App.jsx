@@ -32,7 +32,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="leaderboard" element={<LeaderboardPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/login" element={<LoginPage />} />

@@ -26,7 +26,7 @@ export default function TasksPage() {
 
   useEffect(() => {
     async function fetchTasks() {
-      const data = await requestEgg(lan);
+      const data = await requestEgg(wan);
       console.log("Fetched tasks:", data);
       setTasks(data);
     }

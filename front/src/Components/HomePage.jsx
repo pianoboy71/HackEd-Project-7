@@ -21,6 +21,7 @@ export default function HomePage() {
   const [openTask, setOpenTask] = useState(null);
   const [points, setPoints] = useState(null);
   const [loading, setLoading] = useState(true);
+  const username = Cookies.get("username") || null;
 
   useEffect(() => {
     async function fetchPoints() {
@@ -45,8 +46,9 @@ export default function HomePage() {
     <div className="container mx-auto px-6">
       {/* Hero Section */}
       <section className="text-center mt-16">
-        <h1 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-          Let's get <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600">cracking!</span>
+      <h1 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+        {username ? `${username}, let's get` : "Let's get"}  
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600"> cracking!</span>
         </h1>
         <p className="text-lg font-medium text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
           Make a positive impact in the Norfolk community by completing tasks that will get you out and about, helping those in need, and volunteering!

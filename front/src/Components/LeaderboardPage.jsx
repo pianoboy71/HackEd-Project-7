@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-// Function to make API requests with auth token
+
 async function requestEgg(url, options = {}) {
   const authToken = Cookies.get("authToken"); // Retrieve auth token from cookies
   const urlWithAuth = authToken

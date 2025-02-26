@@ -53,9 +53,9 @@ export default function TasksPage() {
 
   // Define categories with images
   const taskCategories = [
-    { title: "Virtue Tasks", key: "Virtue", imageSrc: virtueImage, bg: "bg-blue-600 dark:bg-blue-800" },
-    { title: "Selfless Tasks", key: "Selfless", imageSrc: selflessImage, bg: "bg-pink-600 dark:bg-pink-700" },
-    { title: "Adventure Tasks", key: "Adventure", imageSrc: adventureImage, bg: "bg-red-600 dark:bg-red-700" },
+    { title: "Virtue Tasks", key: "Virtue", imageSrc: virtueImage, bg: "bg-blue-400 dark:bg-blue-500" },
+    { title: "Selfless Tasks", key: "Selfless", imageSrc: selflessImage, bg: "bg-pink-400 dark:bg-pink-400-accent" },
+    { title: "Adventure Tasks", key: "Adventure", imageSrc: adventureImage, bg: "bg-red-400 dark:bg-red-500" },
   ];
 
   const toggleCategory = (index) => {
@@ -88,8 +88,8 @@ export default function TasksPage() {
               onClick={() => toggleCategory(index)}
             >
               <div className="flex items-center space-x-3">
-                <img src={category.imageSrc} alt={category.title} className="w-10 h-10 object-cover rounded-full" />
-                <h3 className="text-xl font-semibold">{category.title}</h3>
+                <img src={category.imageSrc} alt={category.title} className="w-10 h-10 shadow-xl object-cover rounded-full" />
+                <p className="text-2xl font-semibold">{category.title}</p>
               </div>
               <span className="text-xl">{openCategory === index ? "▲" : "▼"}</span>
             </button>

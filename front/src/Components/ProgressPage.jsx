@@ -18,9 +18,9 @@ async function requestEgg(url, options = {}) {
 
 // Task category styles
 const categoryStyles = {
-  Virtue: "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-blue-500",
-  Selfless: "bg-pink-100 dark:bg-pink-900 text-pink-700 dark:text-pink-300 border-pink-500",
-  Adventure: "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 border-red-500",
+  Virtue: "bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 border-blue-500",
+  Selfless: "bg-pink-100 dark:bg-pink-800 text-pink-700 dark:text-pink-300 border-pink-500",
+  Adventure: "bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-300 border-red-500",
 };
 
 export default function ProgressPage() {

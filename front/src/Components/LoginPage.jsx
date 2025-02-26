@@ -53,7 +53,7 @@ export default function LoginPage() {
           Cookies.set("authToken", response.data.key, { expires: 7 });
           Cookies.set("username", response.data.username, { expires: 7 });
           alert("Sign-in successful!");
-          navigate("/dashboard");
+          navigate("/");
         } else {
           alert("Invalid credentials!");
         }

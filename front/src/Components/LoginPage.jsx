@@ -54,6 +54,7 @@ export default function LoginPage() {
           Cookies.set("username", response.data.username, { expires: 7 });
           alert("Sign-in successful!");
           navigate("/");
+          window.location.reload(); // Refresh the page after clearing cookies
         } else {
           alert("Invalid credentials!");
         }

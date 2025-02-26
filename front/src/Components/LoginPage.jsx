@@ -1,11 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // New Email State
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   function toggleForm() {
     setIsSignUp((prev) => !prev);
@@ -19,87 +23,126 @@ export default function LoginPage() {
     return hashArray.map((byte) => byte.toString(16).padStart(2, "0")).join("");
   }
 
-  async function requestEgg(url, options = {}) {
-    const authToken = Cookies.get("authToken"); // Retrieve auth token from cookies
-    const urlWithAuth = authToken
-      ? `${url}${url.includes("?") ? "&" : "?"}k=${authToken}`
-      : url;
-
+  async function handleAuth(e) {
+    e.preventDefault();
     try {
-      const response = await axios({ url: urlWithAuth, ...options });
-      return response.data;
+      const hashedPassword = await hashPassword(password);
+
+      if (isSignUp) {
+        // Sign Up Request
+        const response = await axios.post("https://egg.fractaldev.co/signup", {
+          username,
+          email, // Include email in signup
+          password: hashedPassword,
+        });
+
+        if (response.data?.success) {
+          alert("Account created! Please log in.");
+          setIsSignUp(false); // Switch to login mode
+        } else {
+          alert(response.data?.message || "Signup failed!");
+        }
+      } else {
+        // Login Request
+        const response = await axios.post("https://egg.fractaldev.co/login", {
+          username,
+          password: hashedPassword,
+        });
+
+        if (response.data?.key) {
+          Cookies.set("authToken", response.data.key, { expires: 7 });
+          Cookies.set("username", response.data.username, { expires: 7 });
+          alert("Sign-in successful!");
+          navigate("/dashboard");
+        } else {
+          alert("Invalid credentials!");
+        }
+      }
     } catch (error) {
-      console.error("Error in requestEgg:", error);
-      throw error;
+      console.error("Authentication error:", error);
+      alert("Error during authentication. Please try again.");
     }
   }
 
-  async function handleSignIn(e) {
-    e.preventDefault(); // Prevent form reload
-
-    //try {
-    const hashedPassword = await hashPassword(password); // Hash the password
-
-    const response = await axios.post("https://egg.fractaldev.co/login", {
-      username,
-      password: hashedPassword, // Send the hashed password
-    });
-
-    if (response.data?.key) {
-      Cookies.set("authToken", response.data.key, { expires: 7 });
-      Cookies.set("username", response.data.username, { expires: 7 });
-      alert("Sign-in successful!");
-    } else {
-      alert("Invalid credentials!");
-    }
-    //} catch (error) {
-    //console.error("Sign-in error:", error);
-    //alert("Error signing in. Please try again.");
-    //}
-  }
-  
   return (
-    <>
-      <div className="container">
-        <h1>{isSignUp ? "Sign Up" : "Login"}</h1>
-        <form id="auth-form" onSubmit={handleSignIn}>
+    <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-800">
+      <div className="bg-white dark:bg-gray-900 shadow-2xl rounded-lg p-8 w-full max-w-md">
+        {/* Title */}
+        <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          {isSignUp ? "Create an Account" : "Sign In"}
+        </h2>
+
+        {/* Form */}
+        <form className="mt-6 space-y-4" onSubmit={handleAuth}>
           {isSignUp && (
-            <div className="input-group">
-              <label htmlFor="full-name">Full Name</label>
-              <input type="text" id="full-name" name="full-name" />
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                required={isSignUp}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full mt-1 p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-emerald-500 focus:border-emerald-500"
+              />
             </div>
           )}
-          <div className="input-group">
-            <label htmlFor="username">Username</label>
+
+          <div>
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Username
+            </label>
             <input
               type="text"
               id="username"
-              name="username"
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              className="w-full mt-1 p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-emerald-500 focus:border-emerald-500"
             />
           </div>
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
+
+          {/* Password Input */}
+          <div className="relative">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Password
+            </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
-              name="password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="w-full mt-1 p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-emerald-500 focus:border-emerald-500"
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-4 flex items-center text-gray-500 dark:text-gray-400"
+            >
+              {showPassword ? "🙈" : "👁"}
+            </button>
           </div>
-          <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full py-3 mt-4 bg-gradient-to-r from-sky-400 to-emerald-600 text-white font-bold rounded-lg hover:opacity-90 transition"
+          >
+            {isSignUp ? "Sign Up" : "Login"}
+          </button>
         </form>
-        <p id="toggle-form">
+
+        {/* Toggle Between Login & Signup */}
+        <p className="mt-6 text-center text-gray-600 dark:text-gray-300">
           {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-          <a href="#" onClick={toggleForm}>
+          <button className="text-emerald-500 hover:underline" onClick={toggleForm}>
             {isSignUp ? "Login" : "Sign Up"}
-          </a>
+          </button>
         </p>
       </div>
-    </>
+    </div>
   );
 }

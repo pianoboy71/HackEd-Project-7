@@ -26,8 +26,8 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchPoints() {
       try {
-        const data = await requestEgg("https://egg.fractaldev.co/points");
-        setPoints(data.points || 0);
+        const data = await requestEgg("https://egg.fractaldev.co/points/user");
+        setPoints(data.total_points || 0);
       } catch (error) {
         setPoints(0);
       } finally {

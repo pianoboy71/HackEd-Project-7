@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&family=Modak&family=Pixelify+Sans&family=Sniglet&display=swap');
 
+
+.homepage-bg {
+    background-color: white;
+  }
+
 body {
     background-color: #FDFFFC;
     text-align: center;
@@ -84,12 +89,6 @@ font-size: 25px;
 text-shadow: 1px 1px grey;
 }
 
-h3 {
-    color: #FACF5A;
-    font-size: 100px;
-    text-shadow: 2px 2px #313715;
-    margin: 0;
-}
 
 .tagline {
 font-size: 37px;
